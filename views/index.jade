@@ -1,0 +1,60 @@
+doctype html
+html(lang='sv')
+  head
+    meta(charset='utf-8')
+    title ---=== EN LITEN ROBOT ===---
+    link(rel='stylesheet' href='js/lib/jquery-ui/themes/smoothness/jquery-ui.min.css')
+    link(rel='stylesheet' href='css/style.css')
+  body
+    div(id='container')
+      form(action='/' method='post')
+        label(for='municipality') Jag vill läsa om arbetslösheten i: 
+        input(type='text' name='municipality' id='municipality' value='Ange en kommun' size='14')
+        input(type='submit' value='Skriv text')
+      
+      if municipality
+        if validChoice
+            - var startOfHeadline = capitalizeFirstLetter(getAdjective(change))
+            h1 #{startOfHeadline} arbetslöshet i #{municipality}
+            if change == 0
+              p.
+                I mars 2015 uppgick arbetslösheten i #{municipality} till 
+                #{formatPercentage(unemployed2015)} procent, en oförändrad nivå 
+                jämfört med motsvarande månad året före.
+            else
+              p.
+                I mars 2015 uppgick arbetslösheten i #{municipality} till 
+                #{formatPercentage(unemployed2015)} procent, en 
+                #{getNoun(change)} med #{formatPercentage(change)} 
+                procentenheter jämfört med motsvarande månad året före.
+            p.
+              Om landets kommuner rangordnas efter hur pass låg arbetslösheten 
+              är så hamnar #{municipality} på plats #{rank} av 290.
+            p.
+              Arbetslösheten bland kvinnor i #{municipality} var  
+              #{formatPercentage(unemployedWomen2015)} procent i mars 2015. 
+              Bland männen uppgick arbetslösheten till 
+              #{formatPercentage(unemployedMen2015)} procent.
+              Ett år tidigare var #{formatPercentage(unemployedWomen2014)} 
+              procent av kvinnorna och 
+              #{formatPercentage(unemployedMen2014)} procent av männen 
+              arbetslösa.
+            if totals.change == 0
+              p.
+                Totalt i hela landet så var 
+                #{formatPercentage(totals.unemployed2015)} procent arbetslösa 
+                i mars 2015, vilket är en lika stor andel som under samma 
+                månad 2014.
+            else
+              p.
+                Totalt i hela landet så var 
+                #{formatPercentage(totals.unemployed2015)} procent arbetslösa 
+                i mars 2015, en #{getNoun(totals.change)} med 
+                #{formatPercentage(totals.change)} procentenheter jämfört med
+                samma månad 2014.
+        else
+          p Det finns ingen kommun som heter #{municipality}.
+    
+    script(src='js/lib/jquery/dist/jquery.min.js')
+    script(src='js/lib/jquery-ui//jquery-ui.min.js')
+    script(src='js/scripts.js')

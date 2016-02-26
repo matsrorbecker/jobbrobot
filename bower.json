@@ -1,0 +1,23 @@
+{
+  "name": "jobbrobot",
+  "description": "",
+  "main": "index.coffee",
+  "authors": [
+    "Mats Rörbecker <mats@rorbecker.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/matsrorbecker/jobbrobot",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/js/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "jquery-ui": "~1.11.4"
+  }
+}
