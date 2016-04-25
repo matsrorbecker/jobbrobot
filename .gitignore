@@ -1,3 +1,4 @@
 node_modules/
 jobbrobot.sublime-workspace
 public/js/lib/
+*.xlsx

@@ -23,13 +23,13 @@ html(lang='sv')
                 h1 #{startOfHeadline} arbetslöshet i #{municipality}
                 if change == 0
                   p.
-                    I mars 2015 uppgick arbetslösheten i #{municipality} till 
-                    #{formatPercentage(unemployed2015)} procent, en oförändrad nivå 
+                    I mars 2016 uppgick arbetslösheten i #{municipality} till 
+                    #{formatPercentage(unemployed2016)} procent, en oförändrad nivå 
                     jämfört med motsvarande månad året före.
                 else
                   p.
-                    I mars 2015 uppgick arbetslösheten i #{municipality} till 
-                    #{formatPercentage(unemployed2015)} procent, en 
+                    I mars 2016 uppgick arbetslösheten i #{municipality} till 
+                    #{formatPercentage(unemployed2016)} procent, en 
                     #{getNoun(change)} med #{formatPercentage(change)} 
                     procentenheter jämfört med motsvarande månad året före.
                 p.
@@ -37,26 +37,28 @@ html(lang='sv')
                   är så hamnar #{municipality} på plats #{rank} av 290.
                 p.
                   Arbetslösheten bland kvinnor i #{municipality} var  
-                  #{formatPercentage(unemployedWomen2015)} procent i mars 2015. 
+                  #{formatPercentage(unemployedWomen2016)} procent i mars 2016. 
                   Bland männen uppgick arbetslösheten till 
-                  #{formatPercentage(unemployedMen2015)} procent.
-                  Ett år tidigare var #{formatPercentage(unemployedWomen2014)} 
+                  #{formatPercentage(unemployedMen2016)} procent.
+                  Ett år tidigare var #{formatPercentage(unemployedWomen2015)} 
                   procent av kvinnorna och 
-                  #{formatPercentage(unemployedMen2014)} procent av männen 
+                  #{formatPercentage(unemployedMen2015)} procent av männen 
                   arbetslösa.
                 if totals.change == 0
                   p.
                     Totalt i hela landet så var 
-                    #{formatPercentage(totals.unemployed2015)} procent arbetslösa 
-                    i mars 2015, vilket är en lika stor andel som under samma 
-                    månad 2014.
+                    #{formatPercentage(totals.unemployed2016)} procent arbetslösa 
+                    i mars 2016, vilket är en lika stor andel som under samma 
+                    månad 2015.
                 else
                   p.
                     Totalt i hela landet så var 
-                    #{formatPercentage(totals.unemployed2015)} procent arbetslösa 
-                    i mars 2015, en #{getNoun(totals.change)} med 
+                    #{formatPercentage(totals.unemployed2016)} procent arbetslösa 
+                    i mars 2016, en #{getNoun(totals.change)} med 
                     #{formatPercentage(totals.change)} procentenheter jämfört med
-                    samma månad 2014.
+                    samma månad 2015.
+                p
+                  em Källa: Kolada, Arbetsförmedlingen, SCB
             else
               p Det finns ingen kommun som heter #{municipality}.
         .col-sm-3
